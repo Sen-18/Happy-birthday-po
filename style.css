@@ -1,0 +1,117 @@
+*{box-sizing:border-box}
+:root{
+  --bg:#171416;
+  --paper:#f7f0e9;
+  --ink:#241d20;
+  --pink:#ff8fba;
+  --pink2:#ffb4d0;
+  --muted:#cfc2c6;
+  --line:rgba(255,255,255,.12);
+}
+html,body{margin:0;min-height:100%;background:var(--bg);color:#fff}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  overflow-x:hidden;
+  background:
+    radial-gradient(circle at 12% 15%,rgba(255,143,186,.13),transparent 24%),
+    radial-gradient(circle at 90% 75%,rgba(255,143,186,.08),transparent 25%),
+    #171416;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;
+  background-image:radial-gradient(rgba(255,255,255,.5) .6px,transparent .6px);
+  background-size:4px 4px;
+}
+.grain{position:fixed;inset:0;pointer-events:none;opacity:.06;mix-blend-mode:screen;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E")}
+main{width:100%;min-height:100svh}
+.screen{
+  min-height:100svh;width:100%;max-width:680px;margin:auto;
+  padding:28px 22px 34px;display:none;position:relative;
+  flex-direction:column;justify-content:center;
+}
+.screen.active{display:flex;animation:in .55s ease both}
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.topline{position:absolute;top:22px;left:22px;right:22px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:2px;color:#bdb0b4}
+.eyebrow{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--pink);margin:16px 0 10px}
+h1,h2,p{margin-top:0}
+h1{font-family:Georgia,serif;font-size:clamp(44px,12vw,78px);line-height:.9;margin-bottom:16px;letter-spacing:-2px}
+h1 span{color:var(--pink);font-style:italic}
+.sub{max-width:500px;color:var(--muted);font-size:15px;line-height:1.6}
+.intro{position:relative;width:min(82vw,390px);margin:48px auto 8px}
+.polaroid{
+  background:var(--paper);padding:12px 12px 20px;box-shadow:0 18px 45px rgba(0,0,0,.45);
+  transform:rotate(-2deg);color:var(--ink)
+}
+.polaroid img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.caption{font-family:"Comic Sans MS",cursive;text-align:center;font-size:15px;padding-top:10px}
+.tape{position:absolute;z-index:3;left:50%;top:-13px;transform:translateX(-50%) rotate(-3deg);background:#ff9bc2;color:#8b3e5b;padding:7px 34px;font-size:20px;box-shadow:0 4px 8px #0003}
+.note{
+  position:absolute;right:20px;bottom:132px;transform:rotate(5deg);
+  background:#ffb2ce;color:#35262c;padding:10px 13px;font-family:"Comic Sans MS",cursive;
+  font-size:12px;line-height:1.45;box-shadow:0 7px 18px #0005
+}
+button{
+  border:0;font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent;
+  width:100%;min-height:54px;border-radius:999px;margin-top:20px;font-weight:700;
+}
+.primary{background:var(--pink);color:#261a20;box-shadow:0 7px 0 #b9547e,0 14px 28px #0004}
+.primary:active{transform:translateY(3px);box-shadow:0 4px 0 #b9547e,0 8px 18px #0004}
+.secondary{background:transparent;color:#fff;border:1px solid var(--line)}
+.doodle{position:fixed;pointer-events:none;color:var(--pink);z-index:0}
+.h1{top:9%;left:6%;font-size:34px;transform:rotate(-15deg)}
+.h2{top:19%;right:7%;font-size:42px;transform:rotate(15deg)}
+.s1{bottom:20%;left:8%;font-size:26px}
+.s2{bottom:9%;right:10%;font-size:31px}
+.archive-title{margin-top:65px}
+.archive-title span{color:#aaa;font-size:13px}
+.archive-title h2{font-family:Georgia,serif;font-size:43px;line-height:.95;margin:7px 0 22px}
+.archive-title em{color:var(--pink);font-style:italic}
+.photo-stack{height:310px;position:relative;margin:2px auto 20px;width:min(90vw,500px)}
+.mini-polaroid{position:absolute;background:var(--paper);color:var(--ink);padding:8px 8px 15px;width:43%;box-shadow:0 13px 30px #0007}
+.mini-polaroid img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.mini-polaroid span{display:block;text-align:center;font:12px "Comic Sans MS",cursive;padding-top:7px}
+.p1{left:1%;top:18px;transform:rotate(-7deg)}
+.p2{left:29%;top:0;transform:rotate(3deg);z-index:2}
+.p3{right:0;top:30px;transform:rotate(8deg)}
+.quote-card{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;margin-top:4px}
+.quote-mark{font:42px Georgia,serif;color:var(--pink);height:26px}
+.quote-card p{font-family:Georgia,serif;font-size:18px;line-height:1.45;margin-bottom:10px}
+.quote-card small{color:#aaa}
+.message-card{
+  margin-top:55px;background:var(--paper);color:var(--ink);padding:32px 25px 29px;
+  border-radius:3px;box-shadow:0 20px 50px #0008;position:relative;
+  transform:rotate(-1deg)
+}
+.message-card:before{
+  content:"";position:absolute;left:50%;top:-13px;transform:translateX(-50%);
+  width:100px;height:25px;background:#ff9bc2;opacity:.9
+}
+.tiny-cake{font-size:42px;margin-bottom:6px}
+.message-card .eyebrow{color:#9e4269}
+.message-card h2{font-family:Georgia,serif;font-size:48px;margin-bottom:18px}
+.message{font-size:16px;line-height:1.65}
+.divider{text-align:center;color:#e56d9e;margin:20px 0}
+.wish{font-family:Georgia,serif;font-style:italic;line-height:1.55}
+.signature{text-align:right;font-family:"Comic Sans MS",cursive;margin:22px 0 0}
+.final-line{text-align:center;color:#cfc2c6;font-size:12px;letter-spacing:.5px;margin-top:25px}
+#confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:20}
+.confetti-piece{position:absolute;top:-20px;width:7px;height:13px;background:var(--pink);animation:fall 1.8s linear forwards}
+@keyframes fall{to{transform:translate3d(var(--x),110vh,0) rotate(720deg);opacity:.1}}
+@media(min-width:700px){
+  .screen{padding-left:40px;padding-right:40px}
+  .topline{left:40px;right:40px}
+  .note{right:35px}
+}
+@media(max-height:700px){
+  .screen{justify-content:flex-start;padding-top:65px}
+  .intro{width:245px}
+  .note{display:none}
+  .photo-stack{height:260px}
+}
+
+.extra-photo{
+  width:min(72vw,300px);margin:8px auto 22px;background:var(--paper);color:var(--ink);
+  padding:9px 9px 15px;box-shadow:0 13px 30px #0007;transform:rotate(2deg)
+}
+.extra-photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.extra-photo span{display:block;text-align:center;font:12px "Comic Sans MS",cursive;padding-top:8px}

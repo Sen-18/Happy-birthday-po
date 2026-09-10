@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#171416">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Happy Birthday, Adah! ♡</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="doodle doodle-heart h1">♡</div>
+  <div class="doodle doodle-heart h2">♡</div>
+  <div class="doodle doodle-star s1">✦</div>
+  <div class="doodle doodle-star s2">✧</div>
+
+  <main>
+    <!-- SCREEN 1 -->
+    <section class="screen active" id="welcome">
+      <div class="topline">
+        <span>THE LITTLE ARCHIVE</span>
+        <span>01 / 03</span>
+      </div>
+
+      <div class="intro">
+        <div class="tape">♡</div>
+        <div class="polaroid hero-photo">
+          <img src="assets/adah.jpg" alt="Adah">
+          <div class="caption">another year of you ♡</div>
+        </div>
+      </div>
+
+      <p class="eyebrow">a tiny birthday surprise</p>
+      <h1>Happy Birthday,<br><span>Adah!</span></h1>
+      <p class="sub">A small collection of memories, chaos, and a birthday message just for you.</p>
+
+      <div class="note">Same weirdo.<br>Brighter days. ♡</div>
+
+      <button class="primary" onclick="nextScreen('archive')">
+        Okay okay, open it →
+      </button>
+    </section>
+
+    <!-- SCREEN 2 -->
+    <section class="screen" id="archive">
+      <div class="topline">
+        <span>THE ARCHIVE</span>
+        <span>02 / 03</span>
+      </div>
+
+      <div class="archive-title">
+        <span>little proof that</span>
+        <h2>you make life<br><em>more fun.</em></h2>
+      </div>
+
+      <div class="photo-stack">
+        <div class="mini-polaroid p1">
+          <img src="assets/adah-friends.jpg" alt="Adah and friends">
+          <span>the friend archive ♡</span>
+        </div>
+        <div class="mini-polaroid p2">
+          <img src="assets/adah-corn.jpg" alt="Adah">
+          <span>caught in 4K 🌽</span>
+        </div>
+        <div class="mini-polaroid p3">
+          <img src="assets/adah.jpg" alt="Adah">
+          <span>birthday evidence</span>
+        </div>
+      </div>
+
+      <div class="extra-photo">
+        <img src="assets/adah-corn.jpg" alt="Adah">
+        <span>okay... this one had to be included 😭</span>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-mark">“</div>
+        <p>May your next chapter be full of good people, funny moments, peaceful days, and reasons to smile.</p>
+        <small>— your birthday archive ♡</small>
+      </div>
+
+      <button class="primary" onclick="nextScreen('message')">
+        Fine. Show the message →
+      </button>
+    </section>
+
+    <!-- SCREEN 3 -->
+    <section class="screen" id="message">
+      <div class="topline">
+        <span>THE ACTUAL MESSAGE</span>
+        <span>03 / 03</span>
+      </div>
+
+      <div class="message-card">
+        <div class="tiny-cake">🎂</div>
+        <p class="eyebrow">HAPPY BIRTHDAY</p>
+        <h2>Adah ♡</h2>
+        <p class="message">
+          I hope today reminds you how much the people around you appreciate
+          having you in their lives. Keep laughing, keep being yourself,
+          and keep making ordinary days a little more memorable.
+        </p>
+        <div class="divider">✦　♡　✦</div>
+        <p class="wish">Here's to more memories, more inside jokes, and more ridiculously funny pictures.</p>
+        <p class="signature">— from your friend, Sen ♡</p>
+      </div>
+
+      <div class="final-line">make a wish. then go make more memories ✨</div>
+
+      <button class="secondary" onclick="restart()">Read it again ↻</button>
+    </section>
+  </main>
+
+  <div id="confetti" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
